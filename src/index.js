@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { ThemeProvider } from '@mui/material/styles'; // Import ThemeProvider from @mui/material/styles
 import {theme} from './theme'
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,10 @@ root.render(
     {/* Wrap the entire application with ThemeProvider */}
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <App />
+      <BrowserRouter>
+      <App />
+      </BrowserRouter>
+       
       </Provider>
     </ThemeProvider>
   </React.StrictMode>

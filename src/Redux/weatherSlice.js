@@ -15,7 +15,7 @@ export const fetchWeather = createAsyncThunk('weather/fetchWeather', async () =>
 // hourly weather is paid api .
 export const fetchHourlyWeather = createAsyncThunk('weather/fetchHourlyWeather', async () => {
   try {
-    const response = await fetch('https://pro.openweathermap.org/data/2.5/forecast/hourly?q={city name}&appid={apikey}');
+    const response = await fetch('https://pro.openweathermap.org/data/2.5/forecast/hourly?q=rawalpindi&appid={apiKey}');
     const data = await response.json();
     console.log(data);
     return data;

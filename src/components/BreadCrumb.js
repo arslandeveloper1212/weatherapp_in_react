@@ -31,8 +31,9 @@ export default function CustomSeparator() {
   ];
 
   return (
-  <Container maxWidth="xl">
-<Stack spacing={2} sx={{marginTop:"20px", background:"white"}}>
+    <div style={{ background: 'white', width: '100%' }}>
+  <Container maxWidth="xxl">
+<Stack  sx={{marginTop:"20px", background:"white"}}>
       
       <Breadcrumbs
         separator={<NavigateNextIcon fontSize="small" />}
@@ -43,7 +44,7 @@ export default function CustomSeparator() {
       </Breadcrumbs>
     </Stack>
   </Container>
-
+    </div>
   
 
    
