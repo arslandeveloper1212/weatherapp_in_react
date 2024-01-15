@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, IconButton, Container, InputAdornment, Input, Box } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
-
-import RightDrawer from './Drawer';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import RightDrawer from './CustomDrawer';
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -15,7 +16,7 @@ const Navbar = () => {
   return (
     <AppBar sx={{ backgroundColor: 'black' }}>
       <Container maxWidth="md">
-        <Toolbar sx={{ display: 'flex', alignItems:"center" }}>
+        <Toolbar sx={{ display: 'flex', alignItems: "center" }}>
           <IconButton
             size="large"
             edge="start"
@@ -25,17 +26,24 @@ const Navbar = () => {
           >
             {/* Your menu icon */}
           </IconButton>
+          <Link style={{textDecoration:"none", color:"white"}} to="/rawalpindi">
           <Typography variant="h4">
             AccuWeather
           </Typography>
-          <Typography variant="h5" sx={{ p: 3 }}>
-            Islamabad Islamabad 20°C
-          </Typography>
-          <Typography component="div" sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end', alignItems:"center" }}>
+          </Link>
+          
+
+          <Box component="div" sx={{ display: "flex", alignItems: "center" }}>
+            <Typography variant="h5" sx={{ padding: "20px 10px" }}>
+              Rawalpindi Punjab 12°C
+            </Typography>
+            <WbSunnyIcon sx={{ color: "#f05514", p: 0, m: 0 }} />
+          </Box>
+          <Typography component="div" sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end', alignItems: "center" }}>
             <Box sx={{ position: 'relative' }}>
               <Input
                 label="Search"
-                type= "text"
+                type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 sx={{
@@ -50,17 +58,17 @@ const Navbar = () => {
                       <SearchIcon />
                     </IconButton>
                   </InputAdornment>
-                  
+
                 }
               />
-              
+
             </Box>
             {/* Add additional components or links here */}
-           <Box sx={{display:"flex", alignItems:"center"}}>
-           <span style={{ margin: '0 20px' }}><OndemandVideoIcon/></span>
-            <span sx={{p:0}}><RightDrawer/></span>
-           </Box>
-           
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <span style={{ margin: '0 20px' }}><OndemandVideoIcon /></span>
+              <span sx={{ p: 0 }}><RightDrawer /></span>
+            </Box>
+
             {/* Add more links as needed */}
           </Typography>
         </Toolbar>

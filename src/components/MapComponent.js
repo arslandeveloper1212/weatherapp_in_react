@@ -2,7 +2,7 @@ import React from 'react';
 import Iframe from 'react-iframe';
 import { Box } from '@mui/material';
 
-const GoogleMap = () => {
+const MapComponent = () => {
   return (
     <Box sx={{marginTop:"20px"}}>
       <Iframe
@@ -19,4 +19,4 @@ const GoogleMap = () => {
   );
 };
 
-export default GoogleMap;
+export default MapComponent;

@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 
 export const fetchWeather = createAsyncThunk('weather/fetchWeather', async () => {
   try {
-    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=rawalpindi&appid={Apikey}');
+    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=rawalpindi&appid={apikey}');
     const data = await response.json();
     return data;
   } catch (error) {
@@ -15,7 +15,7 @@ export const fetchWeather = createAsyncThunk('weather/fetchWeather', async () =>
 // hourly weather is paid api .
 export const fetchHourlyWeather = createAsyncThunk('weather/fetchHourlyWeather', async () => {
   try {
-    const response = await fetch('https://pro.openweathermap.org/data/2.5/forecast/hourly?q=rawalpindi&appid={Apikey}');
+    const response = await fetch('https://pro.openweathermap.org/data/2.5/forecast/hourly?q=rawalpindi&appid={apikey}');
     const data = await response.json();
     console.log(data);
     return data;

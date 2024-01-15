@@ -6,9 +6,10 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import WbTwilightIcon from '@mui/icons-material/WbTwilight';
 import CloudIcon from '@mui/icons-material/Cloud';
-import { Divider, Box, List, ListItem, ListItemText, Tabs, Tab, Container } from '@mui/material';
+import { Divider, Box, List, ListItem, ListItemText, Tabs, Tab, Container, Accordion } from '@mui/material';
+import MapComponent from './MapComponent';
 
-export default function ShowData() {
+export default function Today() {
   const dispatch = useDispatch();
   const [tabValue, setTabValue] = useState(0);
 
@@ -92,6 +93,7 @@ export default function ShowData() {
           </Box>
         </Box>
       </CardContent>
+    
     </Card>
     </Container>
   );
