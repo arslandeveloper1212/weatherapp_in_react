@@ -4,10 +4,11 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Box } from '@mui/material';
+import { Box, Container } from '@mui/material';
 
 export default function BasicAccordion() {
   return (
+    <Container maxWidth="md">
     <Box sx={{marginTop:"20px"}}>
       <Accordion>
         <AccordionSummary
@@ -41,5 +42,6 @@ export default function BasicAccordion() {
       </Accordion>
       
     </Box>
+    </Container>
   );
 }

@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import WbTwilightIcon from '@mui/icons-material/WbTwilight';
 import CloudIcon from '@mui/icons-material/Cloud';
-import { Divider, Box, List, ListItem, ListItemText, Tabs, Tab } from '@mui/material';
+import { Divider, Box, List, ListItem, ListItemText, Tabs, Tab, Container } from '@mui/material';
 
 export default function ShowData() {
   const dispatch = useDispatch();
@@ -51,6 +51,7 @@ export default function ShowData() {
   }
 
   return (
+    <Container maxWidth="md">
     <Card sx={{ width: '550px', marginTop: '150px' }}>
       <Tabs value={tabValue} onChange={handleTabChange}>
         <Tab label="Current Weather" />
@@ -92,5 +93,6 @@ export default function ShowData() {
         </Box>
       </CardContent>
     </Card>
+    </Container>
   );
 }

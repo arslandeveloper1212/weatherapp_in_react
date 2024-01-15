@@ -30,13 +30,7 @@ export const FooterData = [
       { label: 'See all Apps & Downloads', to: '/all-apps-downloads' },
     ],
   },
-  {
-    heading: 'SUBSCRIPTION SERVICES',
-    links: [
-      { label: 'AccuWeather Premium', to: '/premium' },
-      { label: 'AccuWeather Professional', to: '/professional' },
-    ],
-  },
+ 
   {
     heading: 'MORE',
     links: [

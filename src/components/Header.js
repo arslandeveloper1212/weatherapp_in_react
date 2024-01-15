@@ -1,108 +1,72 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import ShowData from './ShowData';
+import React, { useState } from 'react';
+import { AppBar, Toolbar, Typography, IconButton, Container, InputAdornment, Input, Box } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
-import MenuIcon from '@mui/icons-material/Menu';
 
-const drawerWidth = 240;
+import RightDrawer from './Drawer';
+const Navbar = () => {
+  const [searchQuery, setSearchQuery] = useState('');
 
-const iconslight = <OndemandVideoIcon />;
-const navItems = [iconslight];
-
-function DrawerAppBar(props) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+  const handleSearch = () => {
+    // Implement your search logic here using the searchQuery state
+    console.log('Search Query:', searchQuery);
   };
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Arslan
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
-  const container = window !== undefined ? () => window().document.body : undefined;
-
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar>
+    <AppBar sx={{ backgroundColor: 'black' }}>
+      <Container maxWidth="md">
+        <Toolbar sx={{ display: 'flex', alignItems:"center" }}>
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
+            size="large"
             edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
           >
-            <MenuIcon sx={{ color: '#fff' }} />
+            {/* Your menu icon */}
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 4, display: { xs: 'none', sm: 'block' } }}
-          >
-            Arslan
+          <Typography variant="h4">
+            AccuWeather
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
+          <Typography variant="h5" sx={{ p: 3 }}>
+            Islamabad Islamabad 20°C
+          </Typography>
+          <Typography component="div" sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end', alignItems:"center" }}>
+            <Box sx={{ position: 'relative' }}>
+              <Input
+                label="Search"
+                type= "text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                sx={{
+                  width: 300,
+                  backgroundColor: 'white',
+                  paddingLeft: '20px',
+                  borderRadius: '6px',
+                }}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton color="inherit" aria-label="search" onClick={handleSearch}>
+                      <SearchIcon />
+                    </IconButton>
+                  </InputAdornment>
+                  
+                }
+              />
+              
+            </Box>
+            {/* Add additional components or links here */}
+           <Box sx={{display:"flex", alignItems:"center"}}>
+           <span style={{ margin: '0 20px' }}><OndemandVideoIcon/></span>
+            <span sx={{p:0}}><RightDrawer/></span>
+           </Box>
+           
+            {/* Add more links as needed */}
+          </Typography>
         </Toolbar>
-      </AppBar>
-      <nav>
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </nav>
-    </Box>
+      </Container>
+    </AppBar>
   );
-}
-
-DrawerAppBar.propTypes = {
-  window: PropTypes.func,
 };
 
-export default DrawerAppBar;
+export default Navbar;

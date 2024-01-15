@@ -5,14 +5,18 @@ export const theme = createTheme({
     values: {
       xs: 0,
       sm: 600,
-      md: 960,
+      md: 1200,
       lg: 1280,
       xl: 1920,
     },
   },
+  header:{
+    primary:"#1F1F1F",
+    secondary:"ffff",
+  },
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    fontSize: 14,
+    
     h1: {
       fontSize: '2.5rem',
     },
@@ -26,10 +30,10 @@ export const theme = createTheme({
       fontSize: '1.5rem',
     },
     h5: {
-      fontSize: '1.25rem',
+      fontSize: '0.9rem',
     },
     h6: {
-      fontSize: '1rem',
+      fontSize: '0.2rem',
     },
   },
   palette: {

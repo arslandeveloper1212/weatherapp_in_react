@@ -9,17 +9,15 @@ import Footer from './components/Footer';
 import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
-    <div className='bg_color'>
-      <Container maxWidth="xl">
+    <div>
       <Header />
-        <Routes>
+      
+      <Routes>
           <Route path='/' element={<ShowData/>}/>
         </Routes>
-      
-     
+       
       <Map/>
       <Accordion/>
-      </Container>
       <BreadCrumb/>
       <Footer/>
      </div>
