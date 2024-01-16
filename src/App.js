@@ -10,15 +10,19 @@ import { Route, Routes } from 'react-router-dom';
 import Health from './components/Health';
 import RawalpindiAPi from './components/RawalpindiAPi';
 import Today from './components/Today';
-import CustomDrawer from './components/CustomDrawer';
+import AirQuality from './components/AirQuality';
+
+
 function App() {
+ 
   return (
     <div>
-      <Header />
-        <Routes>
+      <Header/>
+      <Routes>
         <Route path='/rawalpindi' element= {<RawalpindiAPi/>}/>
           <Route path='/'element={<Today/>}/>
           <Route path='/Health&Services'element={<Health/>}/>
+          <Route path='/airquality' element={<AirQuality/>}/>
         </Routes>
        <Map/>
       <Accordion/>

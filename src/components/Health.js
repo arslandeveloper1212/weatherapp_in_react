@@ -1,9 +1,11 @@
 import { Box, Container, Divider, Grid, Typography } from '@mui/material'
 import React from 'react'
+import CustomTabs from './CustomTabs'
 
 const Health = () => {
-  return (
-    <Container maxWidth="md">
+  return (<div>
+    <CustomTabs/>
+     <Container maxWidth="md">
       <Typography variant='h4' sx={{ marginTop: "90px" }}>Health</Typography>
       <Box >
         <Grid container sx={{ marginTop: "20px" }} spacing={2}>
@@ -75,6 +77,8 @@ const Health = () => {
         </Grid>
       </Box>
     </Container>
+  </div>
+   
   )
 }
 

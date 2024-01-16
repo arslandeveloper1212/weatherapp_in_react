@@ -33,7 +33,7 @@ export const theme = createTheme({
       fontSize: '0.9rem',
     },
     h6: {
-      fontSize: '0.2rem',
+      fontSize: '0.7rem',
     },
   },
   palette: {
