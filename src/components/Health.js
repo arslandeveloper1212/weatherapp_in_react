@@ -44,7 +44,7 @@ const Health = () => {
 
       <Typography variant='h4' sx={{ marginTop: "40px" }}>Outdoor Activities</Typography>
       <Box >
-        <Grid container sx={{ marginTop: "20px" }} spacing={2}>
+        <Grid container sx={{ marginTop: "20px", paddingBottom:"40px" }} spacing={2}>
           <Grid item xs={12} sm={3} md={3}>
             <Box sx={{ backgroundColor: "#F5F7FA", padding: "20px", borderRadius: "6px", height: "auto" }}>
               <Typography>Arthritis</Typography>

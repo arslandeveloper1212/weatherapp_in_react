@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Box, Card, CardContent, CardMedia, IconButton, Input, InputAdornment, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
@@ -6,10 +6,16 @@ import WbTwilightIcon from '@mui/icons-material/WbTwilight';
 import CloudIcon from '@mui/icons-material/Cloud';
 import { Link } from 'react-router-dom';
 
+
 const RawalpindiAPi = () => {
+
+  
   const [searchQuery, setSearchQuery] = useState('');
 
   const { data, loading, error } = useSelector((state) => state.weather.weather);
+
+
+
 
   if (loading) {
     return <p>Loading...</p>;
@@ -46,10 +52,14 @@ const RawalpindiAPi = () => {
   };
 
   return (
+    <Box>
+
+    
+   
     <Box sx={{ position: 'relative' }}>
       <CardMedia
         component="img"
-        sx={{ marginTop: '30px' }}
+       
         image="https://www.awxcdn.com/adc-assets/images/hero/4/1440x450.jpg"
         alt="Your Alt Text"
       />
@@ -97,6 +107,7 @@ const RawalpindiAPi = () => {
           </Link>
         </Box>
       </Box>
+    </Box>
     </Box>
   );
 };

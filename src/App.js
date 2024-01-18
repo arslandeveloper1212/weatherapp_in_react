@@ -1,5 +1,5 @@
 import './App.css';
-import Header from "./components/Header"
+import Header from './components/Header'
 
 import Map from './components/MapComponent';
 
@@ -11,24 +11,56 @@ import Health from './components/Health';
 import RawalpindiAPi from './components/RawalpindiAPi';
 import Today from './components/Today';
 import AirQuality from './components/AirQuality';
+import HeaderRawalpindiShown from './components/HeaderRawalpindiShown';
 
 
 function App() {
- 
+
   return (
     <div>
-      <Header/>
       <Routes>
-        <Route path='/rawalpindi' element= {<RawalpindiAPi/>}/>
-          <Route path='/'element={<Today/>}/>
-          <Route path='/Health&Services'element={<Health/>}/>
-          <Route path='/airquality' element={<AirQuality/>}/>
-        </Routes>
-       <Map/>
-      <Accordion/>
-      <BreadCrumb/>
-      <Footer/>
-     </div>
+        <Route
+          path="/rawalpindi"
+          element={
+            <>
+              <HeaderRawalpindiShown />
+              <RawalpindiAPi />
+            </>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <Today />
+            </>
+          }
+        />
+        <Route
+          path="/Health&Services"
+          element={
+            <>
+              <Header />
+              <Health />
+            </>
+          }
+        />
+        <Route
+          path="/airquality"
+          element={
+            <>
+              <Header />
+              <AirQuality />
+            </>
+          }
+        />
+      </Routes>
+      <Map />
+      <Accordion />
+      <BreadCrumb />
+      <Footer />
+    </div>
 
 
   );

@@ -27,7 +27,7 @@ const HeaderRawalpindiShown = () => {
   }, []);
 
   return (
-    <AppBar sx={{ backgroundColor: scrollPosition > 250 ? 'black' : 'transparent', transition: 'background-color 0.3s' }}>
+    <AppBar sx={{ boxShadow:"none",backgroundColor: scrollPosition > 50 ? 'black' : 'transparent', transition: 'background-color 0.3s' }}>
       <Container maxWidth="md">
         <Toolbar sx={{ display: 'flex', alignItems: "center" }}>
           <IconButton

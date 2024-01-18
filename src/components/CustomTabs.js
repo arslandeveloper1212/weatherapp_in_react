@@ -8,12 +8,21 @@ const CustomTabs = () => {
 
   return (
     <Container maxWidth="md">
-      <Box sx={{ marginTop: "90px", backgroundColor: "#EEF3F8", display: "flex", gap: "20px", padding:"20px"}}>
+      <Box sx={{ marginTop: "90px", backgroundColor: "white", display: "flex", gap: "20px", padding:"20px"}}>
         {tabsData.map((item, index) => (
-          <React.Fragment key={index}>
+          <React.Fragment
+          
+          key={index}>
             {index > 0 && <Divider orientation="vertical" variant="middle" flexItem />}
             <Typography sx={{ textAlign: "center" }}>
-              <Link to={item.link} style={{ textDecoration: "none" }}>{item.title}</Link>
+              <Link
+             
+              to={item.link}  
+              style={{
+                textDecoration: "none",
+                color: "black",
+                
+              }}>{item.title}</Link>
             </Typography>
           </React.Fragment>
         ))}
